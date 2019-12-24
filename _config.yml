@@ -1,0 +1,25 @@
+title:              괴발개발
+email:              yeen0606@gmail.com
+description:        Yejin's blog
+author:             Yejin Jin
+baseurl:            "/"
+url:                "https://JinYeJin.github.io"
+
+# Social Profiles
+# twitter_username:   SBootstrap
+instagram_username: jinjinye_jin
+github_username:    JinYeJin
+facebook_username:  jinjinyejinjin
+linkedin_username:  yeen666
+
+# Add your google-analytics ID here to activate google analytics
+google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
+
+# Build settings
+markdown:           kramdown
+paginate:           5
+paginate_path:      "/posts/page:num/"
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
