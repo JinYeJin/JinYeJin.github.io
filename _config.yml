@@ -1,6 +1,6 @@
-title:              코딩이 뭔데
+title:              Do anything
 email:              yeen0606@gmail.com
-description:        적당히 아무때나 글 쓰는 블로그
+description:        블로그 글 좀 써라
 author:             Yejin Jin
 baseurl:            "/"
 url:                "https://JinYeJin.github.io"
@@ -17,6 +17,7 @@ google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
 
 # Build settings
 markdown:           kramdown
+theme:              minima
 paginate:           5
 paginate_path:      "/posts/page:num/"
 plugins:
