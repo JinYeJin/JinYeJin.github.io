@@ -1,4 +1,4 @@
-title:              진예진의 고군분투 개발기
+title:              진예진의\n고군분투 개발기
 email:              yeen0606@gmail.com
 description:        부지런한 사람이 되고싶다...
 author:             Yejin Jin
@@ -17,7 +17,7 @@ google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
 
 # Build settings
 markdown:           kramdown
-theme:              minima
+# theme:              jekyll-theme-clean-blog
 paginate:           5
 paginate_path:      "/posts/page:num/"
 plugins:

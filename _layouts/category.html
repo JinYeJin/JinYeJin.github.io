@@ -1,11 +1,16 @@
 ---
-layout: page
+layout: default
 permalink: /category/
 title: Categories
 ---
 
-
+{% if page.background %}
+<header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
 <div id="archives">
+{% else %}
+<header class="masthead">
+{% endif %}
+
 {% for category in site.categories %}
   <div class="archive-group">
     {% capture category_name %}{{ category | first }}{% endcapture %}
