@@ -1,27 +1,33 @@
 ---
 layout: page
-title: categories
-background: '/img/bg-index.jpg'
+title: Categories
+background: '/img/bg-post.jpg'
 ---
 
-<ul class="entry-meta inline-list">
-  {% for item in (0..site.categories.size) %}{% unless forloop.last %}
-    {% capture this_word %}{{ categories_list[item] | strip_newlines }}{% endcapture %}
-      <li><a href="#{{ this_word }}" class="tag">
-        <span class="term">{{ this_word }}</span>
-        <span class="count">{{ site.categories[this_word].size }}</span>
-      </a></li>
-  {% endunless %}{% endfor %}
-</ul>
+{% for category in paginator.categories %}
+    <li><a href="#{{ category }}" class="tag">
+		<span class="term">{{ this_word }}</span>
+		<span class="count">{{ site.categories[this_word].size }}</span>
+    </a></li>
+{% endfor %}
 
-{% for item in (0..site.categories.size) %}{% unless forloop.last %}
-  {% capture this_word %}{{ categories_list[item] | strip_newlines }}{% endcapture %}
-  <article>
-	  <a href="{{site.url}}/categories/{{this_word}}"><h2 id="{{ this_word }}" class="tag-heading">{{ this_word }}</h2></a>
-    <ul>
-    {% for post in site.categories[this_word] %}{% if post.title != null %}
-      <li class="entry-title"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-    {% endif %}{% endfor %}
-		</ul>
-    </article><!-- /.hentry -->
-{% endunless %}{% endfor %}
+{% for category in paginator.categories %}
+	{% for post in pagiantor.categories[category] %}
+	<article class="post-preview">
+		<a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+			<h2 class="post-title">{{ post.title }}</h2>
+			{% if post.subtitle %}
+			<h3 class="post-subtitle">{{ post.subtitle }}</h3>
+			{% else %}
+			<h3 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</h3>
+			{% endif %}
+		</a>
+		<p class="post-meta">Posted by
+			{% if post.author %}
+			{{ post.author }}
+			{% else %}
+			{{ site.author }}
+			{% endif %}
+			on {{ post.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=post.content %}
+		</p>
+	</article>
