@@ -1,7 +1,5 @@
 ---
-layout: page
-title: About Me
-description: This is what I do.
+layout: default
 background: '/img/bg-about.jpg'
 ---
 
